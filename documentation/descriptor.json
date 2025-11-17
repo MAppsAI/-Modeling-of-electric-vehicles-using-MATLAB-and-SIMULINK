@@ -1,0 +1,909 @@
+{
+  "version": "1.0",
+  "repository": "jarin090/-Modeling-of-electric-vehicles-using-MATLAB-and-SIMULINK",
+  "lastUpdated": "2025-11-15T14:25:48.827Z",
+  "commit": "4f2c91ba171bb03de324f166b98023ee1d0d11cf",
+  "models": [
+    {
+      "path": "electric_vehicle3.slx",
+      "name": "electric_vehicle3",
+      "hash": "58b5358dd6d79ac347c6f7d9cac618a98eeb075783c635cf8549dbb2d7decc1d",
+      "lastModified": "2025-11-15T14:25:48.824Z",
+      "documentation": {
+        "electric_vehicle3/Electrical_system": {
+          "path": "electric_vehicle3/Electrical_system",
+          "description": "The Electrical_system subsystem models the electrical components of a system, including power sources, sensors, and actuators. It contains references to key blocks such as Battery, Controlled Voltage Sources, Current and Voltage Sensors, H-Bridge, and DC Motor1. These elements work together to represent the electrical behavior of the system, enabling control through voltage and current regulation. The subsystem uses PMIOPorts (Conn1-Conn5) for interconnections between electrical and mechanical components, facilitating bidirectional data flow. This structure supports simulation of power delivery, feedback sensing, and actuation in a closed-loop environment.",
+          "blocks": [
+            {
+              "name": "Battery",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 1]",
+                "Position": "[460, 65, 500, 105]",
+                "ZOrder": "26193",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "pe_lib/Sources/Battery",
+                "SourceType": "Battery",
+                "SourceProductName": "Simscape Power Systems",
+                "SourceProductBaseCode": "PS"
+              }
+            },
+            {
+              "name": "Controlled Current Source",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 2]",
+                "Position": "[620, 50, 660, 90]",
+                "ZOrder": "5726",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Sources/Controlled Current\nSource",
+                "SourceType": "Controlled Current\nSource",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Controlled PWM Voltage",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2, 2]",
+                "Position": "[480, 220, 540, 260]",
+                "ZOrder": "27",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "elec_lib/Actuators & Drivers/Drivers/Controlled PWM\nVoltage",
+                "SourceType": "Controlled PWM\nVoltage",
+                "SourceProductName": "Simscape Electronics",
+                "SourceProductBaseCode": "SN"
+              }
+            },
+            {
+              "name": "Controlled Voltage Source",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 2]",
+                "Position": "[250, 245, 290, 285]",
+                "ZOrder": "29",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Sources/Controlled Voltage\nSource",
+                "SourceType": "Controlled Voltage\nSource",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Controlled Voltage Source1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 2]",
+                "Position": "[545, 330, 585, 370]",
+                "ZOrder": "30",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Sources/Controlled Voltage\nSource",
+                "SourceType": "Controlled Voltage\nSource",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Current Sensor",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 2]",
+                "Position": "[735, 200, 775, 240]",
+                "ZOrder": "5724",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Sensors/Current Sensor",
+                "SourceType": "Current Sensor",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "DC Motor1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2, 2]",
+                "Position": "[785, 245, 865, 295]",
+                "ZOrder": "26200",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "elec_lib/Actuators & Drivers/Rotational Actuators/DC Motor",
+                "SourceType": "DC Motor",
+                "SourceProductName": "Simscape Electronics",
+                "SourceProductBaseCode": "SN"
+              }
+            },
+            {
+              "name": "Electrical Reference",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[480, 375, 500, 395]",
+                "ZOrder": "28",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Elements/Electrical Reference",
+                "SourceType": "Electrical Reference",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Electrical Reference1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[470, 175, 490, 195]",
+                "ZOrder": "26162",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Elements/Electrical Reference",
+                "SourceType": "Electrical Reference",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "H-Bridge",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 4, 2]",
+                "Position": "[590, 220, 695, 315]",
+                "ZOrder": "24",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "elec_lib/Actuators & Drivers/Drivers/H-Bridge",
+                "SourceType": "H-Bridge",
+                "SourceProductName": "Simscape Electronics",
+                "SourceProductBaseCode": "SN"
+              }
+            },
+            {
+              "name": "Mechanical Rotational Reference",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[822, 355, 868, 395]",
+                "ZOrder": "23",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Mechanical/Rotational Elements/Mechanical\nRotational Reference",
+                "SourceType": "Mechanical\nRotational Reference",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Voltage Sensor",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 2]",
+                "Position": "[745, 35, 785, 75]",
+                "ZOrder": "26175",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Electrical/Electrical Sensors/Voltage Sensor",
+                "SourceType": "Voltage Sensor",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Conn1",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[850, 83, 880, 97]",
+                "ZOrder": "26194",
+                "BlockMirror": "on",
+                "Side": "Right"
+              }
+            },
+            {
+              "name": "Conn2",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[865, 153, 895, 167]",
+                "ZOrder": "26195",
+                "BlockMirror": "on",
+                "Port": "2",
+                "Side": "Right"
+              }
+            },
+            {
+              "name": "Conn3",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[875, 223, 905, 237]",
+                "ZOrder": "26196",
+                "BlockMirror": "on",
+                "Port": "3",
+                "Side": "Left"
+              }
+            },
+            {
+              "name": "Conn4",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[165, 298, 195, 312]",
+                "ZOrder": "26197",
+                "Port": "4",
+                "Side": "Right"
+              }
+            },
+            {
+              "name": "Conn5",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[475, 428, 505, 442]",
+                "ZOrder": "26198",
+                "Port": "5",
+                "Side": "Right"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "name": "Input rconn:2",
+              "type": "signal"
+            },
+            {
+              "name": "Input rconn:3",
+              "type": "signal"
+            },
+            {
+              "name": "Input rconn:4",
+              "type": "signal"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Output rconn:1",
+              "type": "signal"
+            },
+            {
+              "name": "Output lconn:1",
+              "type": "signal"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "Ports",
+              "value": "[0, 0, 0, 0, 0, 1, 4]"
+            },
+            {
+              "name": "Position",
+              "value": "[-345, 22, -140, 203]"
+            },
+            {
+              "name": "ZOrder",
+              "value": "26205"
+            },
+            {
+              "name": "RequestExecContextInheritance",
+              "value": "off"
+            },
+            {
+              "name": "ContentPreviewEnabled",
+              "value": "on"
+            }
+          ]
+        },
+        "electric_vehicle3/SOC": {
+          "path": "electric_vehicle3/SOC",
+          "description": "The SOC (State of Charge) subsystem computes the current State of Charge of a battery based on input current and internal parameters. It uses a discrete-time integrator to update the SoC over time, with a rate transition block to handle sampling rate differences between inputs.\n\nKey components:\n- Battery_current: Input port for the battery current (in amperes).\n- Constant: A reference constant value used in calculations.\n- Discrete-Time Integrator: Updates the SoC value at each discrete time step based on the net current flow.\n- Gain and Gain1: Scale inputs or outputs as needed for unit consistency.\n- Subtract: Computes the difference between input current and a reference value to determine net charge flow.\n- Rate Transition: Ensures consistent sampling rates between blocks, especially when different sources have varying update frequencies.\n- SOC%: Output port that provides the computed State of Charge percentage (0-100%).\n\nThis subsystem is designed for use in battery management systems where real-time SoC estimation is required.",
+          "blocks": [
+            {
+              "name": "Battery_current",
+              "type": "Inport",
+              "parameters": {
+                "Position": "[20, 123, 50, 137]",
+                "ZOrder": "26192",
+                "IconDisplay": "Port number"
+              }
+            },
+            {
+              "name": "Constant",
+              "type": "Constant",
+              "parameters": {
+                "Position": "[340, 20, 370, 50]",
+                "ZOrder": "26191"
+              }
+            },
+            {
+              "name": "Discrete-Time Integrator",
+              "type": "DiscreteIntegrator",
+              "parameters": {
+                "Ports": "[1, 1]",
+                "Position": "[380, 112, 415, 148]",
+                "ZOrder": "26188",
+                "InitialConditionSetting": "Auto",
+                "SampleTime": "-1",
+                "ICPrevOutput": "DiscIntNeverNeededParam",
+                "ICPrevScaledInput": "DiscIntNeverNeededParam"
+              }
+            },
+            {
+              "name": "Gain",
+              "type": "Gain",
+              "parameters": {
+                "Position": "[310, 115, 340, 145]",
+                "ZOrder": "26187",
+                "Gain": "1/(80*3600)",
+                "ParamDataTypeStr": "Inherit: Inherit via internal rule",
+                "OutDataTypeStr": "Inherit: Inherit via internal rule",
+                "SaturateOnIntegerOverflow": "off"
+              }
+            },
+            {
+              "name": "Gain1",
+              "type": "Gain",
+              "parameters": {
+                "Position": "[520, 65, 550, 95]",
+                "ZOrder": "26190",
+                "Gain": "100",
+                "ParamDataTypeStr": "Inherit: Inherit via internal rule",
+                "OutDataTypeStr": "Inherit: Inherit via internal rule",
+                "SaturateOnIntegerOverflow": "off"
+              }
+            },
+            {
+              "name": "Rate Transition",
+              "type": "RateTransition",
+              "parameters": {
+                "Position": "[210, 109, 250, 151]",
+                "ZOrder": "26186"
+              }
+            },
+            {
+              "name": "Subtract",
+              "type": "Sum",
+              "parameters": {
+                "Ports": "[2, 1]",
+                "Position": "[450, 62, 480, 93]",
+                "ZOrder": "26189",
+                "Inputs": "+-",
+                "InputSameDT": "off",
+                "OutDataTypeStr": "Inherit: Inherit via internal rule",
+                "SaturateOnIntegerOverflow": "off"
+              }
+            },
+            {
+              "name": "SOC%",
+              "type": "Outport",
+              "parameters": {
+                "Position": "[640, 73, 670, 87]",
+                "ZOrder": "26193",
+                "IconDisplay": "Port number"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "name": "Input in:1",
+              "type": "signal"
+            }
+          ],
+          "outputs": [
+            {
+              "name": "Output out:1",
+              "type": "signal"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "Ports",
+              "value": "[1, 1]"
+            },
+            {
+              "name": "Position",
+              "value": "[140, 42, 305, 138]"
+            },
+            {
+              "name": "ZOrder",
+              "value": "26204"
+            },
+            {
+              "name": "RequestExecContextInheritance",
+              "value": "off"
+            },
+            {
+              "name": "ContentPreviewEnabled",
+              "value": "on"
+            }
+          ]
+        },
+        "electric_vehicle3/Vehicle": {
+          "path": "electric_vehicle3/Vehicle",
+          "description": "The Vehicle subsystem models the complete vehicle dynamics, including mechanical components and physical interfaces. It contains 13 blocks that represent key elements of vehicle behavior:\n\n- Gear Box: Manages gear shifting and transmission dynamics.\n- PS Terminator Blocks (PS Terminator, PS Terminator1, PS Terminator2, PS Terminator3): These reference blocks likely handle power steering system termination logic or signal processing.\n- Solver Configuration: Configures the simulation solver settings for accurate time-stepping behavior.\n- Tire Models (Magic Formula): Multiple instances of Magic Formula tire models represent wheel-ground interaction dynamics. These include tires at different positions (Tire, Tire1, Tire2, Tire4), capturing lateral and longitudinal forces.\n- Vehicle Body: Represents the structural frame or chassis of the vehicle.\n- PMIOPorts B and V: Provide physical interface points for external communication with other systems (e.g., sensors or actuators).\n\nThis subsystem integrates mechanical components to simulate realistic vehicle motion, including tire behavior, gear dynamics, and system-level interfaces.",
+          "blocks": [
+            {
+              "name": "Gear Box",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 1]",
+                "Position": "[165, 90, 205, 130]",
+                "ZOrder": "36",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Mechanical/Mechanisms/Gear Box",
+                "SourceType": "Gear Box",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS Terminator",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[430, 27, 445, 43]",
+                "ZOrder": "28",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Physical Signals/Sinks/PS Terminator",
+                "SourceType": "PS Terminator",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS Terminator1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[430, 127, 445, 143]",
+                "ZOrder": "29",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Physical Signals/Sinks/PS Terminator",
+                "SourceType": "PS Terminator",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS Terminator2",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[500, 127, 515, 143]",
+                "ZOrder": "30",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Physical Signals/Sinks/PS Terminator",
+                "SourceType": "PS Terminator",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS Terminator3",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1]",
+                "Position": "[500, 27, 515, 43]",
+                "ZOrder": "31",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "fl_lib/Physical Signals/Sinks/PS Terminator",
+                "SourceType": "PS Terminator",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Solver Configuration",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 0, 1]",
+                "Position": "[185, 289, 230, 321]",
+                "ZOrder": "32",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/Solver\nConfiguration",
+                "SourceType": "Solver\nConfiguration",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Tire (Magic Formula)",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2, 2]",
+                "Position": "[335, 20, 395, 80]",
+                "ZOrder": "8",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "sdl_lib/Tires & Vehicles/Tire (Magic Formula)",
+                "SourceType": "Tire (Magic Formula)",
+                "SourceProductName": "Simscape Driveline",
+                "SourceProductBaseCode": "LD"
+              }
+            },
+            {
+              "name": "Tire (Magic Formula)1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2, 2]",
+                "Position": "[540, 120, 600, 180]",
+                "ZOrder": "34",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "sdl_lib/Tires & Vehicles/Tire (Magic Formula)",
+                "SourceType": "Tire (Magic Formula)",
+                "SourceProductName": "Simscape Driveline",
+                "SourceProductBaseCode": "LD"
+              }
+            },
+            {
+              "name": "Tire (Magic Formula)2",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2, 2]",
+                "Position": "[550, 20, 610, 80]",
+                "ZOrder": "35",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "sdl_lib/Tires & Vehicles/Tire (Magic Formula)",
+                "SourceType": "Tire (Magic Formula)",
+                "SourceProductName": "Simscape Driveline",
+                "SourceProductBaseCode": "LD"
+              }
+            },
+            {
+              "name": "Tire (Magic Formula)4",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2, 2]",
+                "Position": "[335, 120, 395, 180]",
+                "ZOrder": "33",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "sdl_lib/Tires & Vehicles/Tire (Magic Formula)",
+                "SourceType": "Tire (Magic Formula)",
+                "SourceProductName": "Simscape Driveline",
+                "SourceProductBaseCode": "LD"
+              }
+            },
+            {
+              "name": "Vehicle Body",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 3, 3]",
+                "Position": "[390, 250, 550, 330]",
+                "ZOrder": "12",
+                "BlockRotation": "270",
+                "BlockMirror": "on",
+                "LibraryVersion": "9001000.1",
+                "SourceBlock": "sdl_lib/Tires & Vehicles/Vehicle Body",
+                "SourceType": "Vehicle Body",
+                "SourceProductName": "Simscape Driveline",
+                "SourceProductBaseCode": "LD"
+              }
+            },
+            {
+              "name": "B",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[35, 103, 65, 117]",
+                "ZOrder": "23",
+                "Side": "Left"
+              }
+            },
+            {
+              "name": "V",
+              "type": "PMIOPort",
+              "parameters": {
+                "Position": "[670, 198, 700, 212]",
+                "ZOrder": "27",
+                "BlockMirror": "on",
+                "Port": "2",
+                "Side": "Left"
+              }
+            }
+          ],
+          "inputs": [
+            {
+              "name": "Input lconn:2",
+              "type": "signal"
+            },
+            {
+              "name": "Input lconn:1",
+              "type": "signal"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "Ports",
+              "value": "[0, 0, 0, 0, 0, 2]"
+            },
+            {
+              "name": "Position",
+              "value": "[0, 201, 185, 299]"
+            },
+            {
+              "name": "ZOrder",
+              "value": "21"
+            },
+            {
+              "name": "RequestExecContextInheritance",
+              "value": "off"
+            },
+            {
+              "name": "ContentPreviewEnabled",
+              "value": "on"
+            }
+          ]
+        },
+        "electric_vehicle3": {
+          "path": "electric_vehicle3",
+          "description": "The electric_vehicle3 subsystem integrates multiple core components to model a complete electric vehicle system. It includes three primary subsystems: Electrical_system, SOC (State of Charge), and Vehicle. The Electrical_system models power flow and control through electrical components such as battery, voltage sources, sensors, H-Bridge, and DC motor, enabling bidirectional communication via PMIOPorts. The SOC subsystem computes the real-time State of Charge using a discrete-time integrator and rate transition block to handle sampling differences, providing accurate battery level estimation. The Vehicle subsystem models mechanical dynamics including gear box behavior, tire interactions (via Magic Formula models), and vehicle body structure, with physical interfaces defined through PMIOPorts.\n\nKey interconnections:\n- Battery power is managed by the Electrical_system and fed into the SOC subsystem for charge tracking.\n- The SOC output feeds back to the Electrical_system to influence power management decisions.\n- Vehicle dynamics are driven by longitudinal driver inputs and powered via the electrical system, with tire forces calculated using Magic Formula models.\n\nThis holistic model supports simulation of end-to-end vehicle behavior from battery state to motion, enabling analysis of energy efficiency, performance, and control strategies in electric vehicles.",
+          "blocks": [
+            {
+              "name": "Battery",
+              "type": "Scope",
+              "parameters": {
+                "Ports": "[2]",
+                "Position": "[75, -69, 105, -36]",
+                "ZOrder": "26167",
+                "ScopeSpecificationString": "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-9.25894','MaxYLimReal','46.66583','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','46.66583','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Battery_Voltage','Battery_current'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-9.25894','MaxYLimReal','46.66583','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','46.66583','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[1 41 1366 651])",
+                "NumInputPorts": "2",
+                "Floating": "off"
+              }
+            },
+            {
+              "name": "Constant1",
+              "type": "Constant",
+              "parameters": {
+                "Position": "[-985, 230, -955, 260]",
+                "ZOrder": "26197",
+                "Value": "0"
+              }
+            },
+            {
+              "name": "Display",
+              "type": "Display",
+              "parameters": {
+                "Ports": "[1]",
+                "Position": "[285, 355, 375, 385]",
+                "ZOrder": "26163",
+                "Decimation": "1"
+              }
+            },
+            {
+              "name": "Distance",
+              "type": "Scope",
+              "parameters": {
+                "Ports": "[1]",
+                "Position": "[305, 419, 335, 451]",
+                "ZOrder": "26194",
+                "ScopeSpecificationString": "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-2.26089','MaxYLimReal','20.34802','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','20.34802','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Distance_km'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-2.26089','MaxYLimReal','20.34802','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','20.34802','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a')",
+                "NumInputPorts": "1",
+                "Floating": "off"
+              }
+            },
+            {
+              "name": "Drive Cycle Source",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 1]",
+                "Position": "[-1020, -14, -925, 74]",
+                "ZOrder": "5715",
+                "AttributesFormatString": "%<cycleVar> (%<tfinal>)",
+                "LibraryVersion": "1.339",
+                "FontSize": "12",
+                "SourceBlock": "autolibshared/Drive Cycle Source",
+                "SourceType": "Drive Cycle Source",
+                "SourceProductName": "Powertrain Blockset",
+                "SourceProductBaseCode": "PW"
+              }
+            },
+            {
+              "name": "Electrical_system",
+              "type": "SubSystem",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 1, 4]",
+                "Position": "[-345, 22, -140, 203]",
+                "ZOrder": "26205",
+                "RequestExecContextInheritance": "off",
+                "ContentPreviewEnabled": "on"
+              }
+            },
+            {
+              "name": "Gain2",
+              "type": "Gain",
+              "parameters": {
+                "Position": "[170, 355, 200, 385]",
+                "ZOrder": "26196",
+                "Gain": "0.001",
+                "ParamDataTypeStr": "Inherit: Inherit via internal rule",
+                "OutDataTypeStr": "Inherit: Inherit via internal rule",
+                "SaturateOnIntegerOverflow": "off"
+              }
+            },
+            {
+              "name": "Integrator",
+              "type": "Integrator",
+              "parameters": {
+                "Ports": "[1, 1]",
+                "Position": "[105, 355, 135, 385]",
+                "ZOrder": "26164"
+              }
+            },
+            {
+              "name": "Longitudinal Driver",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[3, 3]",
+                "Position": "[-835, 145, -640, 265]",
+                "ZOrder": "5720",
+                "LibraryVersion": "1.339",
+                "FontSize": "12",
+                "SourceBlock": "autolibshared/Longitudinal Driver",
+                "SourceType": "Longitudinal Driver",
+                "SourceProductName": "Powertrain Blockset",
+                "SourceProductBaseCode": "PW"
+              }
+            },
+            {
+              "name": "PS-Simulink Converter",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 1, 0, 0, 0, 1]",
+                "Position": "[-260, 420, -230, 450]",
+                "ZOrder": "5729",
+                "BlockMirror": "on",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/PS-Simulink\nConverter",
+                "SourceType": "PS-Simulink\nConverter",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS-Simulink Converter1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 1, 0, 0, 0, 1]",
+                "Position": "[15, 355, 45, 385]",
+                "ZOrder": "26165",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/PS-Simulink\nConverter",
+                "SourceType": "PS-Simulink\nConverter",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS-Simulink Converter2",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 1, 0, 0, 0, 1]",
+                "Position": "[-60, 30, -30, 60]",
+                "ZOrder": "26176",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/PS-Simulink\nConverter",
+                "SourceType": "PS-Simulink\nConverter",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "PS-Simulink Converter3",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[0, 1, 0, 0, 0, 1]",
+                "Position": "[-60, 75, -30, 105]",
+                "ZOrder": "26170",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/PS-Simulink\nConverter",
+                "SourceType": "PS-Simulink\nConverter",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "SOC",
+              "type": "SubSystem",
+              "parameters": {
+                "Ports": "[1, 1]",
+                "Position": "[140, 42, 305, 138]",
+                "ZOrder": "26204",
+                "RequestExecContextInheritance": "off",
+                "ContentPreviewEnabled": "on"
+              }
+            },
+            {
+              "name": "SOC%",
+              "type": "Scope",
+              "parameters": {
+                "Ports": "[1]",
+                "Position": "[395, 73, 425, 107]",
+                "ZOrder": "26183",
+                "ScopeSpecificationString": "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','99.14432','MaxYLimReal','100.09508','YLabelReal','','MinYLimMag','99.14432','MaxYLimMag','100.09508','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'SOC'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','99.14432','MaxYLimReal','100.09508','YLabelReal','','MinYLimMag','99.14432','MaxYLimMag','100.09508','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[1 41 1366 651])",
+                "NumInputPorts": "1",
+                "Floating": "off"
+              }
+            },
+            {
+              "name": "Scope4",
+              "type": "Scope",
+              "parameters": {
+                "Ports": "[2]",
+                "Position": "[-450, 21, -420, 54]",
+                "ZOrder": "26195",
+                "ScopeSpecificationString": "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Acceleraation','Deceleration'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a')",
+                "NumInputPorts": "2",
+                "Floating": "off"
+              }
+            },
+            {
+              "name": "Simulink-PS Converter",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[1, 0, 0, 0, 0, 0, 1]",
+                "Position": "[-475, 302, -430, 328]",
+                "ZOrder": "5721",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/Simulink-PS\nConverter",
+                "SourceType": "Simulink-PS\nConverter",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Simulink-PS Converter1",
+              "type": "Reference",
+              "parameters": {
+                "Ports": "[1, 0, 0, 0, 0, 0, 1]",
+                "Position": "[-475, 377, -430, 403]",
+                "ZOrder": "5722",
+                "LibraryVersion": "3.0",
+                "SourceBlock": "nesl_utility/Simulink-PS\nConverter",
+                "SourceType": "Simulink-PS\nConverter",
+                "SourceProductName": "Simscape",
+                "SourceProductBaseCode": "SS"
+              }
+            },
+            {
+              "name": "Vehicle",
+              "type": "SubSystem",
+              "parameters": {
+                "Ports": "[0, 0, 0, 0, 0, 2]",
+                "Position": "[0, 201, 185, 299]",
+                "ZOrder": "21",
+                "RequestExecContextInheritance": "off",
+                "ContentPreviewEnabled": "on"
+              }
+            },
+            {
+              "name": "Velocity",
+              "type": "Scope",
+              "parameters": {
+                "Ports": "[2]",
+                "Position": "[-970, 347, -940, 383]",
+                "ZOrder": "26161",
+                "BlockMirror": "on",
+                "ScopeSpecificationString": "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources','WiredSimulink',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-5.22222','MaxYLimReal','47.00000','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','47.00000','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Reference','Output_velocity'}},'ShowContent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-5.22222','MaxYLimReal','47.00000','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','47.00000','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','X','PreviousZoomMode','ZoomOut'),extmgr.Configuration('Tools','Measurements',true,'Version','2018a')),'Version','2018a','Position',[1 41 1366 651],'VisibleAtModelOpen','on')",
+                "NumInputPorts": "2",
+                "Floating": "off"
+              }
+            }
+          ],
+          "subsystems": [
+            "Electrical_system",
+            "SOC",
+            "Vehicle"
+          ]
+        }
+      }
+    }
+  ]
+}
