@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "repository": "test-repo/test-owner",
-  "modelPath": "C:\\Pavan\\simdescribe_multiagent\\simdescribe_v2\\backend\\tests\\fixtures\\bms_final_sims_06.slx",
+  "modelPath": "bms_final_sims_06.slx",
   "modelName": "bms_final_sims_06",
   "lastUpdated": "2026-01-16T15:20:38.441Z",
   "commit": "test-commit-hash",

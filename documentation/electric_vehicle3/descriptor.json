@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "repository": "test-repo/test-owner",
-  "modelPath": "C:\\Pavan\\UnboxLogic_multiagent\\UnboxLogic_v2\\backend\\tests\\fixtures\\electric_vehicle.slx",
+  "modelPath": "electric_vehicle.slx",
   "modelName": "electric_vehicle",
   "lastUpdated": "2026-01-15T13:13:31.376Z",
   "commit": "test-commit-hash",
